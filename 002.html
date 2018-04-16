@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		div{
+			width: 200px;
+			height: 20px;
+			border: 1px solid red;
+		}
+		.cr2{
+			background: red;
+		}
+	</style>
+	<script type="text/javascript">
+		function addbac(){
+			var obc=document.getElementById('box');
+			obc.style.width='400px';
+		}
+		function outbac(){
+			var obd=document.getElementById('box');
+			obd.style.height='300px';
+			obd.style.width='300px';
+		}
+	</script>
+</head>
+<body>
+	<div id="box" onmouseover="addbac()"; onmouseout="outbac()"></div>
+</body>
+</html>

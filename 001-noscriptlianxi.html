@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>001-noscriptlianxi</title>
+	<style type="text/css">
+		div{
+			width: 100px;
+			height: 100px;
+		}
+	</style>
+	<script type="text/javascript">
+			window.onload = function(){
+				aBtn = document.getElementById('btn');
+				aBox = document.getElementById('box');
+				aBtn.onclick = function(){
+					if(aBox.style.background=='yellow'){
+						aBox.style.background='red';
+					}else{
+						aBox.style.background='yellow';
+					}
+				}
+			}
+	</script>
+</head>
+<body>
+	<input type="button" id='btn'>
+	<div id='box' style="background: yellow"></div>
+</body>
+</html>
