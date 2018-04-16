@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>005yueli</title>
+	<style type="text/css">
+	*{
+		margin: 0;
+		padding: 0;
+	}
+	.clearfix:after{
+		content: "";
+		display: block;
+		clear: both;
+		visibility: hidden;
+		height: 0px;
+   	}
+		#box{
+		 	width: 380px;
+		 	height: 600px;
+		 	margin: 50px auto;
+		 	background: #90ee90; 
+		 	background-size: contain;
+		 	background-repeat: no-repeat;
+	}
+ 		li{
+ 			width: 100px;
+ 			height: 100px;
+ 			background: #ff6347;
+ 			list-style: none;
+ 			float: left;
+ 			margin-left: 20px;
+ 			margin-top: 20px;
+ 			color: white;
+ 			line-height: 100px;
+ 			text-align: center;
+ 			opacity: 0.8;
+ 		}
+ 		#desc{
+ 			width: 100%;
+ 			height: 100px;
+ 			padding-left: 20px;
+ 			box-sizing: border-box;
+ 		}
+ 		#desc p{
+ 			color: #ff6700;
+ 			font-size: 30px;
+ 		}
+ 		#desc h3{
+ 			color: blue;
+ 		}
+ 		.active{
+ 			color: black;
+ 			background: white;
+ 		}
+	</style>
+	<script type="text/javascript">
+		window.onload = function(){
+			var aLi=document.getElementsByTagName('li');
+			var oDesc=document.getElementById('desc');
+			var arr=['一别之后，二地相悬','虽说是三四月，谁又知五六年','七弦琴无心弹，八行书无可传','九连环从中折断，十里长亭望眼欲穿','百思想，千系念，万般无奈把郎怨','万语千言道不完，百无聊赖十凭栏','重九登高看孤雁,八月仲秋月圆人不圆','七月半，秉烛烧香问苍天,六月伏天从摇扇我心寒','五月石榴似水,偏遇阵阵冷雨浇花端','四月枇杷未黄，我欲对镜心意乱','忽匆匆，三月桃花随水转，飘零零，二月风筝线儿断','噫，郎呀郎，巴不得下一世，你为女来我做男']
+			for(var i=0;i<aLi.length;i++){
+				aLi[i].index=i;
+				aLi[i].onmouseover=function(){
+					for(var j=0;j<aLi.length;j++){
+						aLi[j].className='';
+					}
+					this.className='active';
+					oDesc.innerHTML="<h3>"+(this.index+1)+"月</h3><p>"+arr[this.index]+"</p>";
+				}
+			}
+		}
+	</script>
+</head>
+<body>
+	<div id="box">
+		<ul class="clearfix">
+			<li class="active">1月</li>
+			<li>2月</li>
+			<li>3月</li>
+			<li>4月</li>
+			<li>5月</li>
+			<li>6月</li>
+			<li>7月</li>
+			<li>8月</li>
+			<li>9月</li>
+			<li>10月</li>
+			<li>11月</li>
+			<li>12月</li>
+		</ul>
+		<div id="desc">
+			<h3></h3>
+			<p></p>
+		</div>
+	</div>
+</body>
+</html>
