@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>006-parseInt-parsefloat</title>
+	<style type="text/css">
+		#box{
+			width: 100px;
+			height: 100px;
+			border: 1px solid #ccc;
+		}
+	</style>
+	<script type="text/javascript">
+		window.onload = function(){
+			var oImp1 = document.getElementById('imp1');
+			var oImp2 = document.getElementById('imp2');
+			var oBtn  = document.getElementById('btn');
+			var oBox  = document.getElementById('box');
+			oBtn.onclick = function(){
+				var value1=parseInt(oImp1.value);
+				var value2=parseInt(oImp2.value);
+				if(isNaN(value1)){
+					oBox.innerHTML="你输入的第一个数字有误，请重新输入";
+				}else if(isNaN(value2)){
+					oBox.innerHTML="你输入的第二个数字有误，请重新输入";
+				}else{
+					oBox.innerHTML=(value1*value2);
+				}
+			}
+		}
+	</script>
+</head>
+ 	<input type="text" id="imp1">
+ 	<input type="text" id="imp2">
+ 	<input type="button" id="btn" value="求和">
+ 	<div id="box"></div>
+<body>
+</body>
+</html>
