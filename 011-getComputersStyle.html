@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>011-getComputersStyle</title>
+	<style type="text/css">
+		#box{
+			width: 100px;
+			height: 100px;
+			border: 1px solid #ccc;
+		}
+	</style>
+	<script type="text/javascript">
+		function css(obj,attr,value){
+			if(arguments.length==2){
+				return getComputedStyle(obj,false)[attr];
+			}else{
+				obj.style[attr]=value;
+			}
+		}
+		window.onload = function(){
+			var oBtn1 = document.getElementById('btn1');
+			var oBtn2 = document.getElementById('btn2');
+			var oBtn3 = document.getElementById('btn3');
+			var oBox = document.getElementById('box');
+			oBtn1.onclick = function(){
+				if(oBox.style.width=='100px'){
+					css(oBox,'width','400px');
+				}else{
+					css(oBox,'width','100px');
+				}
+			}
+			oBtn2.onclick = function(){
+				if(oBox.style.background==''){
+					css(oBox,'background','red');
+				}else{
+					css(oBox,'background','');
+				}
+			}
+			oBtn3.onclick = function(){
+				alert(getComputedStyle(oBox,false)['width']);
+			}
+		}
+	</script>
+</head>
+<body>
+	<input type="button" id="btn1" value="变宽">
+	<input type="button" id="btn2" value="变红">
+	<input type="button" id="btn3" value="获取">
+	<div id="box"></div>
+</body>
+</html>
