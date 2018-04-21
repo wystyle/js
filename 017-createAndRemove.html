@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>017-createAndRemove</title>
+	<script type="text/javascript">
+		window.onload = function(){
+			var oBtn=document.getElementById('btn');
+			var oTxt=document.getElementById('txt');
+			var oUl=document.getElementById('ul1');
+			oBtn.onclick=function(){
+				var oLi=document.createElement('li');
+				var oA=document.createElement('a');
+				oA.innerHTML='del';
+				oA.herf='javascript:';
+				oLi.innerHTML=oTxt.value;
+				oA.onclick=function(){
+					oUl.removeChild(oLi);
+				}
+				oLi.appendChild(oA);
+				oUl.appendChild(oLi);
+			}
+		}
+	</script>
+</head>
+<body>
+	<input type="text" id="txt">
+	<input type="button" id="btn" value="添加">
+	<ul id="ul1">
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+	</ul>
+</body>
+</html>
